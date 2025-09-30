@@ -1,0 +1,9 @@
+paramiko
+scp
+geoip2
+pandas
+plotly
+scikit-learn
+openpyxl
+matplotlib
+faker
