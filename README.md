@@ -1,4 +1,4 @@
-# HUNNYPOT
+# HONEYPOT
 
 A honeypot project designed to collect and analyze attacker behavior. 
 
