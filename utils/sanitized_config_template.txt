@@ -1,0 +1,57 @@
+#This file is a TEMPLATE containing all necessary constants for the project's logic.
+#All sensitive credentials, network-specific IP addresses, and port numbers have been 
+#replaced with generic placeholder strings for public repository release.
+
+# --- SSH CONNECTION DETAILS (Sanitized) ---
+HOSTNAME = 'SSH_HOST_PLACEHOLDER'
+USERNAME = 'STUDENT_USERNAME'
+PASSWORD = 'PASSWORD_PLACEHOLDER'
+PORT = 'SSH_PORT_PLACEHOLDER' 
+
+#BAIT IP & PORT CONFIGURATION (Sanitized)
+#These variables define the 5 bait containers used in the study.
+
+IP_ONE = "IP_ADDRESS_ONE"
+IP_TWO = "IP_ADDRESS_TWO"
+IP_THREE = "IP_ADDRESS_THREE"
+IP_FOUR = "IP_ADDRESS_FOUR"
+IP_FIVE = "IP_ADDRESS_FIVE"
+
+#Actual ephemeral ports used for mapping containers have been replaced with descriptive placeholders.
+PORT_ONE = "PORT_NUMBER_ONE"
+PORT_TWO = "PORT_NUMBER_TWO"
+PORT_THREE = "PORT_NUMBER_THREE"
+PORT_FOUR = "PORT_NUMBER_FOUR"
+PORT_FIVE = "PORT_NUMBER_FIVE"
+
+PORT_TO_IP = {
+    PORT_ONE: IP_ONE, 
+    PORT_TWO: IP_TWO,
+    PORT_THREE: IP_THREE,
+    PORT_FOUR: IP_FOUR,
+    PORT_FIVE: IP_FIVE
+}
+
+# --- ASSET AND LOG PATHS (Sanitized) ---
+# These paths point to local files/directories. Sensitive log directories have been abstracted.
+LOGS_GLOB = './assets/mitm_logs'
+GEO_IP_DATABASE = './assets/GeoLite2-City/GeoLite2-City.mmdb'
+WORLD_CITIES_CSV = './assets/cities/worldcities.csv'
+
+PARSED_OUTPUT_DIR = './analysis/parsed/'
+
+PARSED_JSON = f'{PARSED_OUTPUT_DIR}/parsed_attacks.json'
+ALL_CSV = f'{PARSED_OUTPUT_DIR}/all.csv'
+UNIQUE_CSV = f'{PARSED_OUTPUT_DIR}/unique.csv'
+COMMAND_FREQUENCY_JSON = f'{PARSED_OUTPUT_DIR}/command_frequency.json'
+ATTACK_REPORT_XLSX = f'{PARSED_OUTPUT_DIR}/attack_report.xlsx'
+DOWNLOAD_COMMANDS_TXT = f'{PARSED_OUTPUT_DIR}/download_commands.txt'
+URLS_TXT = f'{PARSED_OUTPUT_DIR}/urls.txt'
+WORLD_MAP = f'{PARSED_OUTPUT_DIR}/world_map.html'
+
+# --- PROJECT-SPECIFIC CONSTANTS ---
+CONFIGS = ["bank_high_high", "bank_high_low", "bank_low_high", "bank_low_low", 
+           "hospital_high_high", "hospital_high_low", "hospital_low_high", "hospital_low_low", 
+           "restaurant_high_high", "restaurant_high_low", "restaurant_low_high", "restaurant_low_low"]
+
+CORRELATION_THRESHOLD = 0.5
