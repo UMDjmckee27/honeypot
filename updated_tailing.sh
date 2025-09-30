@@ -4,6 +4,8 @@ EXTERN_IP=$1
 MITM_PORT=$2
 CONTAINER=$3
 
+INTERNAL_IP_PLACEHOLDER="SANITZED_INTERNAL_IP"
+
 OPEN_PATTERN="Attacker connected"
 CLOSE_PATTERN="closed connection|closed the connection"
 
@@ -15,7 +17,6 @@ CHECK_INTERVAL=1
 IDLE_LIMIT=300
 MAX_CONNECTION_TIME=1800
 
-# Wait until attack connects
 echo "$(date +"%Y-%m-%d %H:%M:%S"): Waiting for attacker" >> "/home/student/hunnypot_logs/$MITM_PORT.log"
 tail -F $LOG_FILE | while read -r LINE; do
     if echo "$LINE" | grep -q "$OPEN_PATTERN"; then
@@ -25,8 +26,9 @@ tail -F $LOG_FILE | while read -r LINE; do
 done
 
 ATTACKER_IP=$(cat $FLAG_FILE)
-sudo iptables -I INPUT -d 10.0.3.1 -p tcp --dport "$MITM_PORT" -j DROP
-sudo iptables -I INPUT -s "$ATTACKER_IP" -d 10.0.3.1 -p tcp --dport "$MITM_PORT" -j ACCEPT
+
+sudo iptables -I INPUT -d $INTERNAL_IP_PLACEHOLDER -p tcp --dport "$MITM_PORT" -j DROP
+sudo iptables -I INPUT -s "$ATTACKER_IP" -d $INTERNAL_IP_PLACEHOLDER -p tcp --dport "$MITM_PORT" -j ACCEPT
 
 connection_start=$(echo $(date +%s))
 last_active=$connection_start
@@ -63,8 +65,9 @@ while true; do
     sleep 3
 done
 
-sudo iptables -D INPUT -d 10.0.3.1 -p tcp --dport "$MITM_PORT" -j DROP
-sudo iptables -D INPUT -s "$ATTACKER_IP" -d 10.0.3.1 -p tcp --dport "$MITM_PORT" -j ACCEPT
+
+sudo iptables -D INPUT -d $INTERNAL_IP_PLACEHOLDER -p tcp --dport "$MITM_PORT" -j DROP
+sudo iptables -D INPUT -s "$ATTACKER_IP" -d $INTERNAL_IP_PLACEHOLDER -p tcp --dport "$MITM_PORT" -j ACCEPT
 
 echo "$(date +"%Y-%m-%d %H:%M:%S"): Running recycle script" >> "/home/student/hunnypot_logs/$MITM_PORT.log"
 sudo /home/student/recycle.sh $EXTERN_IP $MITM_PORT $CONTAINER&
