@@ -64,10 +64,10 @@ sudo forever list
 
 ## Authors
 
+John McKee  
 Abhinav Inavolu  
 Ivan Mladenov  
 Matthew Ritter  
-John McKee  
 David Hardy  
 
 ## Version History
