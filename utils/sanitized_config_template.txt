@@ -33,18 +33,18 @@ PORT_TO_IP = {
 }
 
 # --- ASSET AND LOG PATHS (Sanitized) ---
-# These paths point to local files/directories. Sensitive log directories have been abstracted.
-LOGS_GLOB = './assets/mitm_logs'
-GEO_IP_DATABASE = './assets/GeoLite2-City/GeoLite2-City.mmdb'
-WORLD_CITIES_CSV = './assets/cities/worldcities.csv'
+# These paths point to local files/directories.
+LOGS_GLOB = ''
+GEO_IP_DATABASE = ''
+WORLD_CITIES_CSV = ''
 
-PARSED_OUTPUT_DIR = './analysis/parsed/'
+PARSED_OUTPUT_DIR = '.'
 
 PARSED_JSON = f'{PARSED_OUTPUT_DIR}/parsed_attacks.json'
-ALL_CSV = f'{PARSED_OUTPUT_DIR}/all.csv'
+METRICS_CSV = f'{PARSED_OUTPUT_DIR}/metrics.csv'
 UNIQUE_CSV = f'{PARSED_OUTPUT_DIR}/unique.csv'
 COMMAND_FREQUENCY_JSON = f'{PARSED_OUTPUT_DIR}/command_frequency.json'
-ATTACK_REPORT_XLSX = f'{PARSED_OUTPUT_DIR}/attack_report.xlsx'
+ATTACK_REPORT_XLSX = f'{PARSED_OUTPUT_DIR}/attack_report.csv'
 DOWNLOAD_COMMANDS_TXT = f'{PARSED_OUTPUT_DIR}/download_commands.txt'
 URLS_TXT = f'{PARSED_OUTPUT_DIR}/urls.txt'
 WORLD_MAP = f'{PARSED_OUTPUT_DIR}/world_map.html'
