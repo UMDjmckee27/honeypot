@@ -4,7 +4,7 @@ A honeypot project designed to collect and analyze attacker behavior.
 
 ## Description
 
-HUNNYPOT was designed to observe how attackers would engage with various configurations of Linux. We tested with various amounts of CPU, RAM, and different types of honey. Our goal was to see if any of these properties would affect the desirability of our honeypot to be added to an attacker's arsenal. The honeypots run on LXC (Linux containers) and are recycled automatically. Either after 5 minutes of idling or 30 minutes of activity, the container will recycle. A man in the middle server runs on top of the containers to collect timestamps, keystrokes, commands, and other data. All of the data is pulled into separate directories containing each configuration (named by the honey, CPU, and RAM). We are also working on doing a binary analysis on some of the malware that was installed on the honeypots.  
+This honeypot is designed to observe how attackers would engage with various configurations of Linux. We tested with various amounts of CPU, RAM, and different types of honey, observing if any of these properties would affect the desirability of the honeypot. The honeypots run on LXC (Linux containers) and are recycled automatically, either after 5 minutes of idling or 30 minutes of activity, the container recycles. A man in the middle server runs on top of the containers, collecting timestamps, keystrokes, commands, and other data. All of the data is pulled into separate directories containing each configuration (named by honey, CPU, and RAM). Binary analysis has also been done on some of the malware that was installed on the honeypots.  
 
 ## Getting Started
 
