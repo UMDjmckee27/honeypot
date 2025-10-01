@@ -63,9 +63,8 @@ sudo forever list
 ```
 
 ## Authors
-Jack McKee  
-Ivan Mladenov
-Abhinav Inavolu
+
+Jack McKee, Ivan Mladenov, Abhinav Inavolu
 
 ## Version History
 
