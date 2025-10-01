@@ -68,7 +68,6 @@ Jack McKee
 Abhinav Inavolu  
 Ivan Mladenov  
 Matthew Ritter  
-David Hardy  
 
 ## Version History
 
