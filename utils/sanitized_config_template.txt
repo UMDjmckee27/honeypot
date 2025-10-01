@@ -1,6 +1,6 @@
 #This file is a TEMPLATE containing all necessary constants for the project's logic.
 #All sensitive credentials, network-specific IP addresses, and port numbers have been 
-#replaced with generic placeholder strings for public repository release.
+#replaced with generic placeholder strings.
 
 # --- SSH CONNECTION DETAILS (Sanitized) ---
 HOSTNAME = 'SSH_HOST_PLACEHOLDER'
