@@ -1,0 +1,27 @@
+PYTHON GENERATED FILES ---
+Compiled bytecode and cache folders created when Python scripts run.
+*.pyc
+pycache/
+venv/
+.env
+
+LARGE PROPRIETARY DATA ---
+This blocks the MaxMind database due to licensing restrictions and file size.
+The specific path used in constants.py is: ./assets/GeoLite2-City_20241108/GeoLite2-City.mmdb
+We are ignoring the .mmdb files in the assets directory generally.
+assets/**/*.mmdb
+
+--- HONEYPOT DATA AND SENSITIVE OUTPUTS ---
+1. Blocks all raw log files (mitm_logs//) containing attacker IPs and session data.
+assets/mitm_logs/
+
+2. Blocks all generated analysis files (JSON, CSV, Excel, Maps, Plots).
+This includes the PARSED_OUTPUT_DIR from constants.py ('./analysis/parsed/')
+analysis/
+
+--- OPERATING SYSTEM AND EDITOR FILES ---
+macOS files
+.DS_Store
+
+Windows files
+Thumbs.db
