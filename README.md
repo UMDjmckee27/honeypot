@@ -64,7 +64,7 @@ sudo forever list
 
 ## Authors
 
-John McKee  
+Jack McKee  
 Abhinav Inavolu  
 Ivan Mladenov  
 Matthew Ritter  
